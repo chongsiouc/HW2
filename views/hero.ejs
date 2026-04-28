@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <style>
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        h1 { color: #2c3e50; }
+        .hero-container {
+            width: 100%;
+            max-width: 600px;
+        }
+        .hero-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
+        .hero-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e67e22;
+        }
+        .hero-detail { color: #7f8c8d; margin-top: 5px; }
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顯示個人學號 -->
+    <h1> 學號：<%= studentId %></h1>
+    <h2><%= pageTitle %></h1>
+
+    <div class="hero-container">
+        <!-- 使用 EJS 迴圈自動產生清單 -->
+        <% heroList.forEach(function(hero) { %>
+            <div class="hero-card">
+                <div class="hero-name"><%= hero.name %></div>
+                <div class="hero-detail">稱號：<%= hero.title %></div>
+                <div class="hero-detail">技能：<%= hero.skill %></div>
+            </div>
+        <% }); %>
+    </div>
+
+</body>
+</html>
