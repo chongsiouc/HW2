@@ -47,9 +47,7 @@
 </head>
 <body>
 
-    <!-- 顯示個人學號 -->
-    <h1> 學號：<%= studentId %></h1>
-    <h2><%= pageTitle %></h1>
+    <h1><%= pageTitle %></h1>
 
     <div class="hero-container">
         <!-- 使用 EJS 迴圈自動產生清單 -->
@@ -60,6 +58,11 @@
                 <div class="hero-detail">技能：<%= hero.skill %></div>
             </div>
         <% }); %>
+    </div>
+
+    <!-- 顯示個人學號 -->
+    <div class="footer">
+        學員學號：<%= studentId %>
     </div>
 
 </body>
