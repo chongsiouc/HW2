@@ -12,6 +12,10 @@ app.listen(port, '0.0.0.0', () => {
     console.log(`伺服器運作中，監聽埠號：${port}`);
 });
 
+app.get('/', (req, res) => {
+    res.redirect('/hero');
+});
+
 app.get('/hero', (req, res) => {
     // 1. 準備英雄資料
     const heroes = [
