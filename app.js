@@ -8,6 +8,10 @@ app.set('view engine', 'ejs');
 // 使用 path.join 確保路徑在任何環境下都正確
 app.set('views', path.join(__dirname, 'views'));
 
+app.listen(port, '0.0.0.0', () => {
+    console.log(`伺服器運作中，監聽埠號：${port}`);
+});
+
 app.get('/hero', (req, res) => {
     // 1. 準備英雄資料
     const heroes = [
@@ -23,7 +27,7 @@ app.get('/hero', (req, res) => {
     res.render('hero', { 
         pageTitle: '三國英雄榜',        // 修正：新增 pageTitle
         heroList: heroes,             // 修正：將 heroes 改名為 heroList 以對應模板
-        studentId: '23116162'          // 請記得修改為真實學號
+        studentId: '23116162'          // 請記得修改為真實學號S
     });
 });
 
